@@ -1,0 +1,225 @@
+/* Reset básico */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f0fff0;
+  color: #2E7D32;
+  line-height: 1.6;
+  transition: background 0.3s ease;
+  padding-bottom: 80px;
+}
+header, footer {
+  background-color: #4CAF50;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  position: relative;
+}
+header h1 {
+  margin-bottom: 0.2em;
+}
+header p {
+  font-style: italic;
+  font-weight: 300;
+}
+#menuToggle {
+  display: none;
+  position: absolute;
+  right: 20px;
+  top: 25px;
+  font-size: 28px;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+nav {
+  background-color: #388E3C;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 10px;
+  gap: 12px;
+}
+nav a {
+  color: white;
+  padding: 10px 18px;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 8px;
+  transition: background-color 0.3s, color 0.3s;
+  user-select: none;
+}
+nav a:hover, nav a:focus {
+  background-color: #2e7d32;
+  outline: none;
+}
+main {
+  max-width: 900px;
+  margin: auto;
+  padding: 20px;
+}
+section {
+  background: #ffffffdd;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #c8e6c9;
+  margin-bottom: 40px;
+  padding: 20px;
+  transition: box-shadow 0.3s;
+}
+section:focus-within {
+  box-shadow: 0 0 20px #4CAF50;
+  outline: none;
+}
+h2 {
+  margin-bottom: 10px;
+  color: #2E7D32;
+  position: relative;
+  cursor: default;
+  user-select: none;
+}
+ul {
+  padding-left: 20px;
+}
+input[type="checkbox"] {
+  transform: scale(1.2);
+  margin-right: 8px;
+  cursor: pointer;
+}
+label {
+  cursor: pointer;
+}
+button {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 10px 18px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+  user-select: none;
+}
+button:hover, button:focus {
+  background-color: #45A049;
+  outline: none;
+}
+#btnTop {
+  position: fixed;
+  right: 20px;
+  bottom: 40px;
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  font-size: 24px;
+  padding: 12px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: none;
+  transition: background-color 0.3s ease;
+  user-select: none;
+  z-index: 1000;
+}
+#btnTop:hover, #btnTop:focus {
+  background-color: #388E3C;
+  outline: none;
+}
+
+/* FAQ */
+.faq-item {
+  margin-bottom: 15px;
+}
+.faq-question {
+  background-color: #a5d6a7;
+  border: none;
+  width: 100%;
+  padding: 14px 20px;
+  font-weight: 600;
+  color: #2e7d32;
+  text-align: left;
+  border-radius: 8px;
+  cursor: pointer;
+  user-select: none;
+  transition: background-color 0.3s;
+}
+.faq-question:hover, .faq-question:focus {
+  background-color: #81c784;
+  outline: none;
+}
+.faq-answer {
+  padding: 12px 20px;
+  background-color: #dcedc8;
+  border-radius: 8px;
+  margin-top: 6px;
+  display: none;
+  user-select: text;
+}
+.faq-answer.open {
+  display: block;
+  animation: fadeIn 0.4s ease forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Calendar */
+#calendar {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 8px;
+  text-align: center;
+}
+#calendar .day {
+  background: #4caf50cc;
+  color: white;
+  padding: 14px 0;
+  border-radius: 8px;
+  cursor: default;
+  user-select: none;
+  font-weight: 600;
+  transition: background-color 0.3s;
+}
+#calendar .day.today {
+  background: #2e7d32;
+  box-shadow: 0 0 8px 3px #81c784aa;
+}
+#calendar .task-day {
+  background: #81c784;
+  color: #1b5e20;
+  font-weight: 700;
+  cursor: pointer;
+}
+#calendar .task-day:hover, #calendar .task-day:focus {
+  background: #66bb6a;
+  outline: none;
+}
+
+/* Weather */
+#weather {
+  background: #dcedc8;
+  padding: 15px;
+  border-radius: 10px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  user-select: none;
+}
+
+/* Responsive */
+@media (max-width: 700px) {
+  nav {
+    flex-direction: column;
+    align-items: center;
+  }
+  #menuToggle {
+    display: block;
+  }
+  nav.closed {
+    display: none;
+  }
+}
